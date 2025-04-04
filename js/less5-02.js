@@ -7,6 +7,7 @@ const userList = [
     isActive: false,
     balance: 2811,
     gender: "male",
+    age: 37,
   },
   {
     name: "Sharlene Bush",
@@ -16,6 +17,7 @@ const userList = [
     isActive: true,
     balance: 3821,
     gender: "female",
+    age: 34,
   },
   {
     name: "Ross Vazquez",
@@ -25,6 +27,7 @@ const userList = [
     isActive: false,
     balance: 3793,
     gender: "male",
+    age: 24,
   },
   {
     name: "Elma Head",
@@ -34,6 +37,7 @@ const userList = [
     isActive: true,
     balance: 2278,
     gender: "female",
+    age: 21,
   },
   {
     name: "Carey Barr",
@@ -43,6 +47,7 @@ const userList = [
     isActive: true,
     balance: 3951,
     gender: "male",
+    age: 27,
   },
   {
     name: "Blackburn Dotson",
@@ -52,6 +57,7 @@ const userList = [
     isActive: false,
     balance: 1498,
     gender: "male",
+    age: 38,
   },
   {
     name: "Sheree Anthony",
@@ -61,14 +67,17 @@ const userList = [
     isActive: true,
     balance: 2764,
     gender: "female",
+    age: 39,
   },
 ];
 
-const getUsersWithEyeColor = (users, color) => {
-  const usersOneColor = users.filter((item) => item.eyeColor === color);
-
-  return usersOneColor;
+const getUsersWithAge = (users, minAge, maxAge) => {
+  const usersOneAge = users.filter(
+    (item) => item.age >= minAge && item.age <= maxAge
+  );
+  return usersOneAge;
 };
 
-const hairColor = "green";
-console.log(getUsersWithEyeColor(userList, hairColor));
+const minAge = 20;
+const maxAge = 30;
+console.log(getUsersWithAge(userList, minAge, maxAge));

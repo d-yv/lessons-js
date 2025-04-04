@@ -1,4 +1,4 @@
-const userList = [
+const userlist = [
   {
     name: "Moore Hensley",
     email: "moorehensley@indexia.com",
@@ -64,11 +64,11 @@ const userList = [
   },
 ];
 
-const getUsersWithEyeColor = (users, color) => {
-  const usersOneColor = users.filter((item) => item.eyeColor === color);
-
-  return usersOneColor;
+const calculateTotalBalance = (users) => {
+  const totalBalance = users.reduce((lastItem, item) => {
+    return lastItem + item.balance;
+  }, 0);
+  return totalBalance;
 };
 
-const hairColor = "green";
-console.log(getUsersWithEyeColor(userList, hairColor));
+console.log(calculateTotalBalance(userlist));
